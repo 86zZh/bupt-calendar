@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--
+      品牌深紫：顶部条与右下角「导入课表」悬浮按钮共用同一个颜色，
+      这样两端视觉是统一的。
+    -->
+    <color name="brand_purple">#4A2E86</color>
+    <!-- 稍亮一点，用于按下态、可点元素的高亮 -->
+    <color name="brand_purple_light">#6B4BB8</color>
+    <color name="on_brand_purple">#FFFFFF</color>
+
+    <!-- 地址栏区域：淡紫灰，保证在浅色/深色模式下文字都清楚 -->
+    <color name="url_bar_background">#EFECF6</color>
+    <color name="url_bar_text">#1F1B2E</color>
+    <color name="url_bar_hint">#8A83A0</color>
+
+    <!--
+      桌面图标配色：保留原来的蓝＋橙，只把对比度压下来一档。
+      底色由高饱和亮蓝(#1565C0)改为偏蓝紫(#4A6FC4)，
+      与前景浅白的对比从约 5.7:1 降到约 4.3:1，柔和但不失颜色。
+    -->
+    <color name="ic_launcher_background">#4A6FC4</color>
+</resources>

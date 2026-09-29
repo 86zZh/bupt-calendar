@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  「导入前的确认」弹窗内容。
+
+  三个选项原本是 AlertDialog 默认的竖排文字按钮，这里改成一排三个真正的按钮，
+  一眼就能看出有三条路可走：
+    · 选日期   —— 我知道确切日期，直接按日历选
+    · 改周次   —— 显示的周次不对，我要改
+    · 开始导入 —— 没问题，就按推算的来（主操作，实心深紫）
+-->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:paddingHorizontal="20dp"
+    android:paddingTop="4dp"
+    android:paddingBottom="4dp">
+
+    <!--
+      内容可能比较长（含「推算结果核对表」），放进 ScrollView。
+      实际高度上限在代码里按屏幕高度限制，避免把按钮挤出屏幕。
+    -->
+    <ScrollView
+        android:id="@+id/confirmScroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbarStyle="insideInset">
+
+        <TextView
+            android:id="@+id/confirmMessage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:lineSpacingExtra="3dp"
+            android:textSize="13sp" />
+    </ScrollView>
+
+    <!-- 三个选项横排 -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="14dp"
+        android:baselineAligned="false"
+        android:orientation="horizontal">
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPickDate"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:minWidth="0dp"
+            android:minHeight="42dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:text="@string/confirm_btn_pick_date"
+            android:textColor="@color/brand_purple"
+            android:textSize="12sp"
+            app:strokeColor="@color/brand_purple" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnEditWeek"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_weight="1"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:minWidth="0dp"
+            android:minHeight="42dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:text="@string/confirm_btn_edit_week"
+            android:textColor="@color/brand_purple"
+            android:textSize="12sp"
+            app:strokeColor="@color/brand_purple" />
+
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnConfirmImport"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="6dp"
+            android:layout_weight="1"
+            android:insetTop="0dp"
+            android:insetBottom="0dp"
+            android:minWidth="0dp"
+            android:minHeight="42dp"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:text="@string/confirm_btn_import"
+            android:textColor="@color/on_brand_purple"
+            android:textSize="12sp"
+            app:backgroundTint="@color/brand_purple" />
+    </LinearLayout>
+</LinearLayout>

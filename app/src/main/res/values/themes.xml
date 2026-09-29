@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Theme.BuptCalendar" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- 品牌色：芯片选中态、按钮等可点元素都会跟着变成深紫 -->
+        <item name="colorPrimary">@color/brand_purple</item>
+        <item name="colorPrimaryDark">@color/brand_purple</item>
+
+        <!-- 背景要画到状态栏/灵动岛后面（配合代码里的 insets 让内容下移） -->
+        <item name="android:statusBarColor">@android:color/transparent</item>
+        <!-- 顶栏是深紫，状态栏图标必须用浅色才看得见 -->
+        <item name="android:windowLightStatusBar">false</item>
+    </style>
+
+    <!--
+      顶栏专用的主题叠加层（ThemeOverlay 只覆盖列出的属性，不会替换整个主题）。
+
+      目的：
+      1. 让标题、导航图标（返回箭头）用白色；
+      2. **让右上角「三个点」用白色**（走 colorControlNormal），在深紫底上更显眼；
+      3. 把三个点的图标换成一个点更大、间距更开的版本，进一步提升可辨识度。
+    -->
+    <style name="ThemeOverlay.BuptCalendar.Toolbar" parent="">
+        <item name="colorControlNormal">@color/on_brand_purple</item>
+        <item name="colorControlHighlight">#33FFFFFF</item>
+        <item name="android:textColorPrimary">@color/on_brand_purple</item>
+        <item name="actionOverflowButtonStyle">@style/Widget.BuptCalendar.OverflowButton</item>
+    </style>
+
+    <!-- 三个点：换成自定义图标并染成白色 -->
+    <style name="Widget.BuptCalendar.OverflowButton" parent="Widget.AppCompat.ActionButton.Overflow">
+        <item name="android:src">@drawable/ic_overflow_more</item>
+        <item name="android:tint">@color/on_brand_purple</item>
+    </style>
+</resources>

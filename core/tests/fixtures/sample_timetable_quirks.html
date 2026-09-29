@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>学生课表（虚构样本）</title>
+</head>
+<body>
+
+<!--
+  这是一个**手工构造**的课表页样本，全部数据都是虚构的。
+
+  它的作用是复现北邮真实课表页里那些容易让解析器出错的结构：
+
+    1. 课程名是 div 的**直接文本**，没有 title="课程名称"
+    2. 每格 4 个 div：隐藏的摘要版 + 可见的详情版 + 2 个空的骨架模板
+    3. 骨架模板的 id 与真实课程**完全相同**（会被误当成同名的另一门课）
+    4. 课程 id 形如 <32位十六进制>-<星期>-<类型>，星期几最可靠的来源
+    5. 三小节连排 [01-02-03节]（意思是第 1 到第 3 节，取首尾数字）
+    6. 多段周次 3,5-18(周)
+    7. 表尾有「备注」行，不能被当成课程
+
+  真实页面样本（含个人信息）不进版本库，见同目录 README.md。
+-->
+
+<div class="xnxq">2026-2027学年 第一学期 第3周</div>
+
+<table id="kbtable" class="Grid_Line">
+  <tbody>
+  <tr>
+    <td width="70" height="28" align="center">节次</td>
+    <td width="123" height="28" align="center">星期一</td>
+    <td width="123" height="28" align="center">星期二</td>
+    <td width="123" height="28" align="center">星期三</td>
+    <td width="123" height="28" align="center">星期四</td>
+    <td width="123" height="28" align="center">星期五</td>
+    <td width="123" height="28" align="center">星期六</td>
+    <td width="123" height="28" align="center">星期日</td>
+  </tr>
+
+  <!-- ============ 大节 1 ============ -->
+  <tr>
+    <!-- 注意：节次标签写成 <th>（不是 <td>）。旧代码只收 td 时会丢这一列，导致整行错位 -->
+    <th width="70" height="28" align="center" valign="top">1</th>
+
+    <!-- 星期一：普通两小节写法 -->
+    <td width="123" height="28" align="center" valign="top">
+      <input type="hidden" name="jx0415zbdiv_1" value="AAAAAAAA11114444BBBB2222CCCC3333-1-1">
+      <input type="hidden" name="jx0415zbdiv_2" value="AAAAAAAA11114444BBBB2222CCCC3333-1-2">
+      <div id="AAAAAAAA11114444BBBB2222CCCC3333-1-1" class="kbcontent1" style="display: none;">数据结构<br><font title="周次(节次)">1-16(周)</font><br><font title="教室">教1-101</font><br></div>
+      <div id="AAAAAAAA11114444BBBB2222CCCC3333-1-2" style="" class="kbcontent">数据结构<br><font title="老师">王老师</font><br><font title="周次(节次)">1-16(周)[01-02节]</font><br><font title="教室">教1-101</font><br></div>
+      <div id="AAAAAAAA11114444BBBB2222CCCC3333-1-1" class="kbcontent1 sykb1" style="display: none;"></div>
+      <div id="AAAAAAAA11114444BBBB2222CCCC3333-1-2" style="display: ;" class="kbcontent sykb2"></div>
+    </td>
+
+    <!-- 星期二：三小节连排 [01-02-03] -->
+    <td width="123" height="28" align="center" valign="top">
+      <input type="hidden" name="jx0415zbdiv_1" value="BBBBBBBB11114444BBBB2222CCCC3333-2-1">
+      <input type="hidden" name="jx0415zbdiv_2" value="BBBBBBBB11114444BBBB2222CCCC3333-2-2">
+      <div id="BBBBBBBB11114444BBBB2222CCCC3333-2-1" class="kbcontent1" style="display: none;">操作系统<br><font title="周次(节次)">3-18(周)</font><br><font title="教室">教2-201</font><br></div>
+      <div id="BBBBBBBB11114444BBBB2222CCCC3333-2-2" style="" class="kbcontent">操作系统<br><font title="老师">李老师</font><br><font title="周次(节次)">3-18(周)[01-02-03节]</font><br><font title="教室">教2-201</font><br></div>
+      <div id="BBBBBBBB11114444BBBB2222CCCC3333-2-1" class="kbcontent1 sykb1" style="display: none;"></div>
+      <div id="BBBBBBBB11114444BBBB2222CCCC3333-2-2" style="display: ;" class="kbcontent sykb2"></div>
+    </td>
+
+    <td width="123" height="28" align="center" valign="top">&nbsp;</td>
+    <td width="123" height="28" align="center" valign="top">&nbsp;</td>
+
+    <!-- 星期五：多段周次 3,5-18 -->
+    <td width="123" height="28" align="center" valign="top">
+      <input type="hidden" name="jx0415zbdiv_1" value="CCCCCCCC11114444BBBB2222CCCC3333-5-1">
+      <input type="hidden" name="jx0415zbdiv_2" value="CCCCCCCC11114444BBBB2222CCCC3333-5-2">
+      <div id="CCCCCCCC11114444BBBB2222CCCC3333-5-1" class="kbcontent1" style="display: none;">计算机网络<br><font title="周次(节次)">3,5-18(周)</font><br><font title="教室">教3-301</font><br></div>
+      <div id="CCCCCCCC11114444BBBB2222CCCC3333-5-2" style="" class="kbcontent">计算机网络<br><font title="老师">张老师</font><br><font title="周次(节次)">3,5-18(周)[01-02节]</font><br><font title="教室">教3-301</font><br></div>
+      <div id="CCCCCCCC11114444BBBB2222CCCC3333-5-1" class="kbcontent1 sykb1" style="display: none;"></div>
+      <div id="CCCCCCCC11114444BBBB2222CCCC3333-5-2" style="display: ;" class="kbcontent sykb2"></div>
+    </td>
+
+    <td width="123" height="28" align="center" valign="top">&nbsp;</td>
+    <td width="123" height="28" align="center" valign="top">&nbsp;</td>
+  </tr>
+
+  <!-- ============ 大节 2 ============ -->
+  <tr>
+    <!-- 这一行节次标签用 <td>，与上面一行的 <th> 形成对比 -->
+    <td width="70" height="28" align="center" valign="top">2</td>
+
+    <!-- 星期一：和上面是同一门课，但节次不同（03-04），必须保留成独立条目 -->
+    <td width="123" height="28" align="center" valign="top">
+      <input type="hidden" name="jx0415zbdiv_1" value="AAAAAAAA11114444BBBB2222CCCC3333-1-1">
+      <input type="hidden" name="jx0415zbdiv_2" value="AAAAAAAA11114444BBBB2222CCCC3333-1-2">
+      <div id="AAAAAAAA11114444BBBB2222CCCC3333-1-1" class="kbcontent1" style="display: none;">数据结构<br><font title="周次(节次)">1-16(周)</font><br><font title="教室">教1-101</font><br></div>
+      <div id="AAAAAAAA11114444BBBB2222CCCC3333-1-2" style="" class="kbcontent">数据结构<br><font title="老师">王老师</font><br><font title="周次(节次)">1-16(周)[03-04节]</font><br><font title="教室">教1-101</font><br></div>
+      <div id="AAAAAAAA11114444BBBB2222CCCC3333-1-1" class="kbcontent1 sykb1" style="display: none;"></div>
+      <div id="AAAAAAAA11114444BBBB2222CCCC3333-1-2" style="display: ;" class="kbcontent sykb2"></div>
+    </td>
+
+    <td width="123" height="28" align="center" valign="top">&nbsp;</td>
+    <td width="123" height="28" align="center" valign="top">&nbsp;</td>
+    <td width="123" height="28" align="center" valign="top">&nbsp;</td>
+    <td width="123" height="28" align="center" valign="top">&nbsp;</td>
+    <td width="123" height="28" align="center" valign="top">&nbsp;</td>
+    <td width="123" height="28" align="center" valign="top">&nbsp;</td>
+  </tr>
+
+  <!-- ============ 大节 3~6（没有课，用来验证空行不会被计入节次）============ -->
+  <tr><td width="70" height="28" align="center">3</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+  <tr><td width="70" height="28" align="center">4</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+  <tr><td width="70" height="28" align="center">5</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+  <tr><td width="70" height="28" align="center">6</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+  <!-- ============ 大节 7 ============ -->
+  <tr>
+    <td width="70" height="28" align="center" valign="top">7</td>
+    <td width="123" height="28" align="center" valign="top">&nbsp;</td>
+    <td width="123" height="28" align="center" valign="top">&nbsp;</td>
+
+    <!-- 星期三：只有骨架模板没有被过滤时会多出来的那条 -->
+    <td width="123" height="28" align="center" valign="top">
+      <input type="hidden" name="jx0415zbdiv_1" value="DDDDDDDD11114444BBBB2222CCCC3333-3-1">
+      <input type="hidden" name="jx0415zbdiv_2" value="DDDDDDDD11114444BBBB2222CCCC3333-3-2">
+      <div id="DDDDDDDD11114444BBBB2222CCCC3333-3-1" class="kbcontent1" style="display: none;">编译原理<br><font title="周次(节次)">8-11(周)</font><br><font title="教室">教4-401</font><br></div>
+      <div id="DDDDDDDD11114444BBBB2222CCCC3333-3-2" style="" class="kbcontent">编译原理<br><font title="老师">赵老师</font><br><font title="周次(节次)">8-11(周)[07-08节]</font><br><font title="教室">教4-401</font><br></div>
+      <div id="DDDDDDDD11114444BBBB2222CCCC3333-3-1" class="kbcontent1 sykb1" style="display: none;"></div>
+      <div id="DDDDDDDD11114444BBBB2222CCCC3333-3-2" style="display: ;" class="kbcontent sykb2"></div>
+    </td>
+
+    <td width="123" height="28" align="center" valign="top">&nbsp;</td>
+    <td width="123" height="28" align="center" valign="top">&nbsp;</td>
+    <td width="123" height="28" align="center" valign="top">&nbsp;</td>
+    <td width="123" height="28" align="center" valign="top">&nbsp;</td>
+  </tr>
+
+  <!-- 大节 8~14：整行没有课，且整行都不含课程块（应被完全跳过） -->
+  <tr><td width="70" height="28" align="center">8</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+  <tr><td width="70" height="28" align="center">9</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+  <tr><td width="70" height="28" align="center">10</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+  <tr><td width="70" height="28" align="center">11</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+  <tr><td width="70" height="28" align="center">12</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+  <tr><td width="70" height="28" align="center">13</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+  <tr><td width="70" height="28" align="center">14</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td><td>&nbsp;</td></tr>
+
+  <!-- ============ 备注行：不能被当成课程 ============ -->
+  <tr>
+    <th width="70" height="28" align="center">备注:</th>
+    <td colspan="7" align="left">数据结构 [9000000001-9000000003]班 1-16周;操作系统 9000000001班 3-18周;计算机网络 9000000002班 3,5-18周;编译原理 9000000001班 8-11周;</td>
+  </tr>
+  </tbody>
+</table>
+
+<span id="bz"><font color="red">注：O表示整体调课，P表示部分调课</font></span>
+
+</body>
+</html>

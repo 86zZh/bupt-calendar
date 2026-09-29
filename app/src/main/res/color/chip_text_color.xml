@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  入口芯片的文字颜色。
+
+  地址栏是一块**固定浅色**的区域（不随深色模式变），
+  如果继续用主题默认颜色，深色模式下会变成浅色文字配浅色底 → 看不清。
+  所以这里显式区分选中/未选中两种状态。
+-->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/on_brand_purple" android:state_checked="true" />
+    <item android:color="@color/url_bar_text" />
+</selector>

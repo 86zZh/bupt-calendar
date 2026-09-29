@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 图标底色：保留原本的蓝，改成偏蓝紫并降一档饱和度，对比不再那么冲 -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <solid android:color="#4A6FC4" />
+</shape>

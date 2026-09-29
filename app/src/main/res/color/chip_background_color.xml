@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 选中态填充品牌深紫，未选中态透明（只留描边） -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/brand_purple" android:state_checked="true" />
+    <item android:color="@android:color/transparent" />
+</selector>

@@ -1,0 +1,30 @@
+[package]
+name = "bupt_core"
+version = "0.1.0"
+edition = "2021"
+description = "北邮新教务(强智 jsxsd)课表解析 + 系统日历日程生成 + 导入记录管理（Rust 核心）"
+license = "MIT"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+name = "bupt_core"
+
+[dependencies]
+# HTML5 解析（与 Jsoup 同为 html5ever 系，容错行为一致）
+scraper = { version = "0.20", default-features = false, features = ["deterministic"] }
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+chrono = { version = "0.4", default-features = false, features = ["std", "clock", "serde"] }
+# bundled 特性：自带 SQLite C 源码，交叉编译到 Android 不需要额外的 NDK 预编译库
+rusqlite = { version = "0.32", features = ["bundled"] }
+
+# JNI 只在 Android 目标下编入，避免污染桌面端测试构建
+[target.'cfg(target_os = "android")'.dependencies]
+jni = "0.21"
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true

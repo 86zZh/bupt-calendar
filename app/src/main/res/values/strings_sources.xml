@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="source_campus">校园网直连</string>
+    <string name="source_webvpn">WebVPN（校外）</string>
+    <string name="hint_url">教务系统地址</string>
+    <string name="fab_import">导入课表</string>
+</resources>

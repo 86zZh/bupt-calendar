@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- 提示与对话框 -->
+    <string name="need_calendar_permission">需要日历读写权限才能导入日程。请在系统设置里授予「日历」权限后重试。</string>
+    <string name="extracting">正在读取当前页面的课表…</string>
+    <string name="extract_failed_title">没能读到课表</string>
+    <string name="extract_failed_parse">抓取结果解析失败，请重试。</string>
+    <string name="extract_failed_unknown">未知原因，请重试。</string>
+    <string name="extract_empty_html">页面内容为空，请等页面完全加载后再点一次。</string>
+    <string name="wrong_site">当前页面不是北邮教务系统（%1$s），为避免误操作已停止。请先登录教务系统并打开课表页。</string>
+    <string name="no_course_title">没有解析出课程</string>
+    <string name="no_course_hint">请确认：1) 已选中正确的学期；2) 已展开课表；3) 当前账号确实有课。</string>
+
+    <!-- 失败时的详细说明：把「哪里出错」摊开讲，方便用户反馈 -->
+    <string name="fail_reason_label">失败环节：%1$s</string>
+    <string name="fail_page_label">当前页面：%1$s</string>
+    <string name="fail_found_table">是否找到课表表格：%1$s</string>
+    <string name="fail_strategy">解析策略：%1$s</string>
+    <string name="fail_details_label">详细说明：</string>
+    <string name="fail_hint_export">如果看不懂也没关系：请点右上角菜单 →「导出诊断文件」，把生成的文件或剪贴板内容发给我，我就能定位问题。</string>
+
+    <!-- 诊断导出 -->
+    <string name="exporting">正在收集当前页面的信息…</string>
+    <string name="export_done_title">诊断文件已生成</string>
+    <string name="export_done_message">已保存到：\n%1$s\n\n同时已复制到剪贴板。\n\n请把这个文件（或剪贴板内容）发给我，我就能看清是哪里出了问题。</string>
+    <string name="export_failed_js">读取当前页面失败，请等页面完全加载后再点一次。</string>
+    <string name="export_failed_write">写入文件失败：%1$s</string>
+
+    <!-- 失败环节（对应抓取脚本返回的 reason） -->
+    <string name="reason_no_table">在页面上没找到课表表格 —— 可能还没翻到课表页，或者课表在网页内嵌的框架里</string>
+    <string name="reason_table_empty">找到了课表表格，但里面是空的 —— 可能课表处于折叠状态，或这一学期没有课</string>
+    <string name="reason_exception">抓取脚本在页面上执行出错</string>
+    <string name="reason_unknown">未知</string>
+    <string name="hint_on_timetable_page">已识别课表，点我导入</string>
+    <string name="hint_on_timetable_page_week">第%1$d周 · 点我导入</string>
+
+    <!-- 学期起始日期 -->
+    <string name="dialog_term_start_title">确认学期第一周周一</string>
+    <string name="toast_term_start_hint">识别到 %1$d 门课（%2$d 个条目），当前第 %3$s 周。请确认「第 1 周周一」的日期 —— 差一周所有日程都会错位。</string>
+    <string name="dialog_pick_week1_monday">选择第 1 周的周一</string>
+    <string name="week_unknown">未知</string>
+
+    <!-- 只填「今天第几周」的确认界面 -->
+    <string name="confirm_week_title">%1$d 门课，共 %2$d 个条目</string>
+    <string name="confirm_week_from_page">课表页上写着当前周次，请确认是否正确：</string>
+    <string name="confirm_week_guessed">没能从课表页读出当前周次，下面是按今天日期推算的，请确认：</string>
+    <string name="confirm_week_span">今天所在的一周：第 %1$d 周（本周一 %2$s）</string>
+    <string name="confirm_week1_monday">由此倒推：第 1 周周一 = %1$s</string>
+    <string name="confirm_week_check_table">下面是推算结果，请核对星期几对不对：</string>
+    <string name="confirm_week_tip">只要星期几和你的课表一致，就说明没有错位。\n\n注意：课程是按周次重复的，导入后系统日历里会出现整学期的每一节课。</string>
+    <string name="confirm_week_ok">确认，开始导入</string>
+    <string name="confirm_week_edit">不是这周，改周次</string>
+    <string name="confirm_week_pick_date">直接按日期选</string>
+
+    <!-- 横排按钮上的短标签（太长会挤不下，所以和上面那组分开） -->
+    <string name="confirm_btn_import">开始导入</string>
+    <string name="confirm_btn_edit_week">改周次</string>
+    <string name="confirm_btn_pick_date">选日期</string>
+    <string name="dialog_week_title">今天是第几周？</string>
+    <string name="dialog_week_message">这个数字教务页面上一般直接写着（例如「2026-2027-1 第3周」）。填错会让整份课表错位。</string>
+
+    <!-- 导入结果 -->
+    <string name="import_done_title">导入完成</string>
+    <string name="import_done_message">新增 %1$d 条日程，跳过重复 %2$d 条。\n\n本 App 目前共记录了 %3$d 条日程，可用右上角菜单一键清空。</string>
+    <string name="import_nothing_title">无需导入</string>
+    <string name="import_nothing_message">这份课表的 %1$d 条日程之前已经导入过，没有新增内容。\n\n如果课表有变化，请先用右上角菜单「清空本 App 导入的日程」再重新导入。</string>
+    <string name="import_failed_title">导入失败</string>
+    <string name="no_writable_calendar">找不到可写的系统日历，也无法创建本地日历。请先在系统「日历」应用里添加一个账户。</string>
+
+    <!-- 清空 -->
+    <string name="nothing_to_clear">本 App 还没有导入过日程。</string>
+    <string name="confirm_clear_message">将删除本 App 之前导入的 %1$d 条日程。\n\n只会删这些日程，你自己手动添加的日程不受影响。</string>
+    <string name="action_clear_confirm">删除</string>
+    <string name="clear_done_message">已删除 %1$d 条日程。</string>
+    <string name="clear_partial_message">已删除 %1$d 条，还有 %2$d 条没能删掉（可能已被手动改动）。记录已保留，可以再点一次「清空」补齐。</string>
+    <string name="clear_failed_title">清空失败</string>
+
+    <!-- 导入记录 -->
+    <string name="status_empty">还没有任何导入记录。</string>
+    <string name="status_total">共记录 %1$d 条日程：</string>
+    <string name="status_line">· %1$s  第1周周一=%2$s  来源=%3$s  %4$d 条</string>
+
+    <!-- 使用说明 -->
+    <string name="help_message">1. 选择入口：\n   · 校园网直连：在校园网内用 http://jwgl.bupt.edu.cn/jsxsd/ 登录\n   · WebVPN：校外用 https://webvpn.bupt.edu.cn/ 登录后，在页面里点进「本科教务」\n\n2. 登录后进入「我的课表 / 课表查询」，选好学期。\n\n3. 点右下角悬浮的「导入课表」按钮。App 会自动抓取当前页面的课表并解析。\n\n4. 核对「学期第 1 周周一」的日期后确认，日程会逐条写入系统日历。\n\n5. 课表有变化时：右上角菜单 →「清空本 App 导入的日程」，然后重新导入。\n\n注意：本 App 只删除自己导入的日程，不会动你手动添加的日程。</string>
+
+    <!-- Rust 核心 -->
+    <string name="core_unavailable_title">核心组件未加载</string>
+    <string name="core_unavailable_message">Rust 核心库 libbupt_core.so 加载失败：\n%1$s\n\n请确认安装的是完整 APK（重新安装一次通常可以解决）。</string>
+</resources>

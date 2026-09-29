@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 描边颜色：选中态用品牌深紫，未选中态用中灰紫 -->
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:color="@color/brand_purple" android:state_checked="true" />
+    <item android:color="#7D76A0" />
+</selector>

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="menu_clear">清空本 App 导入的日程</string>
+    <string name="menu_status">导入记录</string>
+    <string name="menu_export">导出诊断文件（导入失败时用）</string>
+    <string name="menu_help">使用说明</string>
+</resources>
