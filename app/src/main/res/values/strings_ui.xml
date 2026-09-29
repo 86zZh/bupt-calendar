@@ -81,7 +81,7 @@
     <string name="status_line">· %1$s  第1周周一=%2$s  来源=%3$s  %4$d 条</string>
 
     <!-- 使用说明 -->
-    <string name="help_message">1. 选择入口：\n   · 校园网直连：在校园网内用 http://jwgl.bupt.edu.cn/ 登录\n   · WebVPN：校外用 https://webvpn.bupt.edu.cn/ 登录后，在页面里点进「本科教务管理系统」\n\n2. 登录后进入「课程与考试 / 我的课表 / 学期理论课表」，选好学期。\n\n3. 点右下角悬浮的「导入课表」按钮。App 会自动抓取当前页面的课表并解析。\n\n4. 核对「学期第 1 周周一」的日期后确认，日程会逐条写入系统日历。\n\n5. 课表有变化时：右上角菜单 →「清空本 App 导入的日程」，然后重新导入。\n\n注意：本 App 只删除自己导入的日程，不会动你手动添加的日程。</string>
+    <string name="help_message">1. 选择入口：\n   · 校园网直连：在校园网内用 http://jwgl.bupt.edu.cn/ 登录\n   · WebVPN：校外用 https://webvpn.bupt.edu.cn/ 登录后，在页面里点进「本科教务管理系统」\n\n2. 登录后进入「课程与考试 / 我的课表 / 学期理论课表」。\n\n3. 点右下角悬浮的「导入课表」按钮。App 会自动抓取当前页面的课表并解析。\n\n4. 核对「学期第 1 周周一」的日期后确认，日程会逐条写入系统日历。\n\n5. 课表有变化时：右上角菜单 →「清空本 App 导入的日程」，然后重新导入。\n\n注意：本 App 只删除自己导入的日程，不会动你手动添加的日程。</string>
 
     <!-- Rust 核心 -->
     <string name="core_unavailable_title">核心组件未加载</string>
